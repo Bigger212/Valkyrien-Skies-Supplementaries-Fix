@@ -1,12 +1,10 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.bigger212.eur_sup_fix.mixin",
+  "package": "net.bigger212.vs2_sup_fix.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "CannonBallEntityMixin",
-    "ImprovedProjectileEntityMixin",
-    "ProjectileEntityMixin"
+    "ImprovedProjectileEntityMixin"
   ],
   "client": [
   ],

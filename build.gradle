@@ -18,15 +18,15 @@ fabricApi {
 }
 
 repositories {
-    maven {
-        url = "https://maven.fabricmc.net/"
-    }
+//    maven {
+//        url = "https://maven.fabricmc.net/"
+//    }
     maven {
         url = "https://cursemaven.com"
     }
-    maven {
-        url = "https://api.modrinth.com/maven"
-    }
+//    maven {
+//        url = "https://api.modrinth.com/maven"
+//    }
     mavenCentral()
 }
 
@@ -37,12 +37,10 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-//    modImplementation fileTree(dir: 'run/mods', include: '**/*.jar')
-
-    modImplementation "curse.maven:amendments-896746:6259598"
+//    modImplementation "curse.maven:amendments-896746:6259598"
     modImplementation "curse.maven:supplementaries-412082:6463027"
     modImplementation "curse.maven:selene-499980:6507199"
-    modImplementation "curse.maven:eureka-ships-654384:5321629"
+//    modImplementation "curse.maven:eureka-ships-654384:5321629"
     modImplementation "curse.maven:valkyrien-skies-258371:6510607"
 }
 

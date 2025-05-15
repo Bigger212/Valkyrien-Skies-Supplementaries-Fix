@@ -1,16 +1,14 @@
-package net.bigger212.eur_sup_fix.mixin;
+package net.bigger212.vs2_sup_fix.mixin;
 
 import net.mehvahdjukaar.moonlight.api.entity.ImprovedProjectileEntity;
+import org.valkyrienskies.mod.common.world.RaycastUtilsKt;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
-import org.valkyrienskies.mod.common.world.RaycastUtilsKt;
 
 @Mixin(ImprovedProjectileEntity.class)
 public abstract class ImprovedProjectileEntityMixin {
@@ -24,7 +22,6 @@ public abstract class ImprovedProjectileEntityMixin {
             )
     )
     private BlockHitResult redirectAABBCollision(Entity entity, Vec3d movement, double distance) {
-        System.out.println("Using VS-aware AABB collision for entity: " + entity.getName().getString());
 
         // Current and target positions
         Vec3d start = entity.getPos();
@@ -39,11 +36,8 @@ public abstract class ImprovedProjectileEntityMixin {
                 entity
         );
 
-        // Use the VS extension method to include ships in the raycast
-        BlockHitResult hitResult = RaycastUtilsKt.clipIncludeShips(entity.getWorld(), context);
-
-        return hitResult != null ? hitResult
-                : BlockHitResult.createMissed(end, Direction.UP, BlockPos.ofFloored(end));
+        // Use the VS utility to include ships in the raycast
+        return RaycastUtilsKt.clipIncludeShips(entity.getWorld(), context);
     }
-
 }
+

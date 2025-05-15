@@ -1,31 +1,30 @@
 {
   "schemaVersion": 1,
-  "id": "eur_sup_fix",
+  "id": "vs2_sup_fix",
   "version": "${version}",
-  "name": "Eureka + Supplementaries Cannon Fix",
-  "description": "Makes Supplementaries cannon balls collide with Eureka Ships!",
-  "authors": ["Bigger212"],
+  "name": "Valkyrien Skies 2 + Supplementaries Fix",
+  "description": "Makes Supplementaries cannon balls collide with Valkyrien Skies Ships and more!",
+  "authors": ["bigger_212"],
   "contact": {},
   "license": "All-Rights-Reserved",
-  "icon": "assets/eur_sup_fix/icon.png",
+  "icon": "assets/vs2_sup_fix/icon.png",
   "environment": "*",
   "entrypoints": {
-    "fabric-datagen": [
-      "net.bigger212.eur_sup_fix.client.Eur_sup_fixDataGenerator"
-    ],
-    "client": [
-      "net.bigger212.eur_sup_fix.client.Eur_sup_fixClient"
-    ],
+    "fabric-datagen": [],
+    "client": [],
     "main": [
-      "net.bigger212.eur_sup_fix.Eur_sup_fix"
+      "net.bigger212.vs2_sup_fix.vs2_sup_fix"
     ]
   },
   "mixins": [
-    "eur_sup_fix.mixins.json"
+    "vs2_sup_fix.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": "${minecraft_version}",
+    "supplementaries": "*",
+    "moonlight": "*",
+    "valkyrienskies": "*"
   }
 }
