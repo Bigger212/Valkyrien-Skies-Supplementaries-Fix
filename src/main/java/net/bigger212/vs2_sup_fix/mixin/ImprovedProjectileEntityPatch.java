@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(ImprovedProjectileEntity.class)
-public abstract class ImprovedProjectileEntityMixin {
+public abstract class ImprovedProjectileEntityPatch {
 
     //
     @Redirect(
@@ -23,11 +23,8 @@ public abstract class ImprovedProjectileEntityMixin {
     )
     private BlockHitResult redirectAABBCollision(Entity entity, Vec3d movement, double distance) {
 
-        // Current and target positions
         Vec3d start = entity.getPos();
         Vec3d end = start.add(movement);
-
-        // Construct the RaycastContext
         RaycastContext context = new RaycastContext(
                 start,
                 end,
@@ -36,8 +33,7 @@ public abstract class ImprovedProjectileEntityMixin {
                 entity
         );
 
-        // Use the VS utility to include ships in the raycast
+        // Use the VS2 utility to include ships in the raycast.
         return RaycastUtilsKt.clipIncludeShips(entity.getWorld(), context);
     }
 }
-
