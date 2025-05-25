@@ -1,3 +1,16 @@
+Planned Features
+
+    Extended cannonball configuration. (Currently, Supplementaries only supports cannonball_break_radius values of 1.1, 0.0, or 10.0. 
+
+
+Known Issues:
+
+These are known issues between the original mods and NOT introduced by this mod.
+
+    /reload crashes the game.
+    Cannon aiming mode does not work when assembled with a ship. Just use flint & steel.
+
+
 <h1 align="center">View Mod On Modrinth</h1>
 <div align="center">
   <a href="https://modrinth.com/mod/valkyrien-skies-2-+-supplementaries-cannon-fix">
