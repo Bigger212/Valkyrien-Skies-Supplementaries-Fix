@@ -1,6 +1,7 @@
 Planned Features
 
     Extended cannonball configuration. (Currently, Supplementaries only supports cannonball_break_radius values of 1.1, 0.0, or 10.0. 
+    Patches for Known Issues...
 
 
 Known Issues:
