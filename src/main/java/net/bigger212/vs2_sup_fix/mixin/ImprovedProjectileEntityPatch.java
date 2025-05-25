@@ -12,17 +12,16 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(ImprovedProjectileEntity.class)
 public abstract class ImprovedProjectileEntityPatch {
+// ImprovedProjectileEntity
 
-    //
-    @Redirect(
-            method = "move",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/mehvahdjukaar/moonlight/api/util/math/MthUtils;collideWithSweptAABB(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/Vec3d;D)Lnet/minecraft/util/hit/BlockHitResult;"
-            )
+    // move
+    @Redirect(method = "move", at = @At(value = "INVOKE",
+            target = "Lnet/mehvahdjukaar/moonlight/api/util/math/MthUtils;collideWithSweptAABB(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/Vec3d;D)Lnet/minecraft/util/hit/BlockHitResult;")
     )
     private BlockHitResult redirectAABBCollision(Entity entity, Vec3d movement, double distance) {
-
+        /*
+        Use the VS2 utility to include ships in the raycast.
+        */
         Vec3d start = entity.getPos();
         Vec3d end = start.add(movement);
         RaycastContext context = new RaycastContext(
@@ -32,8 +31,6 @@ public abstract class ImprovedProjectileEntityPatch {
                 RaycastContext.FluidHandling.NONE,
                 entity
         );
-
-        // Use the VS2 utility to include ships in the raycast.
         return RaycastUtilsKt.clipIncludeShips(entity.getWorld(), context);
     }
 }
