@@ -31,10 +31,10 @@ public class vs2_sup_fix implements ModInitializer {
             try {
                 CONFIG_FILE.getParentFile().mkdirs();
                 try (FileWriter writer = new FileWriter(CONFIG_FILE)) {
-                    writer.write("# VS2+Supplementaries Cannonball Config\n");
+                    writer.write("# VS+Supplementaries Cannonball Config\n");
                     writer.write("# This config controls cannonball explosion behavior on ships\n#\n");
                     writer.write("# You can rely on the config; 'supplementaries-common.json' to work while 'DAMAGE_SHIPS_UNIQUELY' is false.\n");
-                    writer.write("# If you want the explosion to damage ships differently than the default, set 'DAMAGE_SHIPS_UNIQUELY' to true.\n");
+                    writer.write("# If you want the explosion on ships to only use this config; set 'DAMAGE_SHIPS_UNIQUELY' to true.\n");
                     writer.write("# Supplementaries only supports values of 1.1, 0.0, or 10.0. \n\n");
 
                     writer.write("DAMAGE_SHIPS_UNIQUELY=" + DAMAGE_SHIPS_UNIQUELY + "\n");
