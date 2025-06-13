@@ -3,7 +3,7 @@
   "id": "vs_sup_fix",
   "version": "${version}",
   "name": "Valkyrien Skies + Supplementaries Cannon Fix",
-  "description": "Makes Supplementaries cannon balls collide with Valkyrien Skies Ships!",
+  "description": "A simple patch for Supplementaries cannonballs to detect Valkyrien Skies ships! ",
   "authors": ["bigger212"],
   "contact": {},
   "license": "All-Rights-Reserved",
