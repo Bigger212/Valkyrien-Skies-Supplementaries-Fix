@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "vs_sup_fix",
+  "version": "${version}",
+  "name": "Valkyrien Skies + Supplementaries Cannon Fix",
+  "description": "A simple patch for Supplementaries cannonballs to detect Valkyrien Skies ships! ",
+  "authors": ["bigger212"],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/vs_sup_fix/vs_sup_fix_icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [],
+    "client": [],
+    "main": [
+      "net.bigger212.vs_sup_fix.vs_sup_fix"
+    ]
+  },
+  "mixins": [
+    "vs_sup_fix.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "supplementaries": "*",
+    "moonlight": "*",
+    "valkyrienskies": "*"
+  }
+}
