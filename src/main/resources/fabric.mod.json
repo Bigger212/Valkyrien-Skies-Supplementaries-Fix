@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
-  "id": "vs2_sup_fix",
+  "id": "vs_sup_fix",
   "version": "${version}",
-  "name": "Valkyrien Skies 2 + Supplementaries Cannon Fix",
+  "name": "Valkyrien Skies + Supplementaries Cannon Fix",
   "description": "Makes Supplementaries cannon balls collide with Valkyrien Skies Ships!",
   "authors": ["bigger212"],
   "contact": {},
   "license": "All-Rights-Reserved",
-  "icon": "assets/vs2_sup_fix/vs2_sup_fix_icon.png",
+  "icon": "assets/vs_sup_fix/vs_sup_fix_icon.png",
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [],
     "client": [],
     "main": [
-      "net.bigger212.vs2_sup_fix.vs2_sup_fix"
+      "net.bigger212.vs_sup_fix.vs_sup_fix"
     ]
   },
   "mixins": [
-    "vs2_sup_fix.mixins.json"
+    "vs_sup_fix.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",

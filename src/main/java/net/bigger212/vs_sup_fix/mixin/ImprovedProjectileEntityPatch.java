@@ -1,4 +1,4 @@
-package net.bigger212.vs2_sup_fix.mixin;
+package net.bigger212.vs_sup_fix.mixin;
 
 import net.mehvahdjukaar.moonlight.api.entity.ImprovedProjectileEntity;
 import org.valkyrienskies.mod.common.world.RaycastUtilsKt;

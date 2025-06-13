@@ -1,6 +1,6 @@
-package net.bigger212.vs2_sup_fix.mixin;
+package net.bigger212.vs_sup_fix.mixin;
 
-import net.bigger212.vs2_sup_fix.vs2_sup_fix;
+import net.bigger212.vs_sup_fix.vs_sup_fix;
 import net.mehvahdjukaar.supplementaries.common.entities.CannonBallEntity;
 import net.mehvahdjukaar.supplementaries.common.misc.explosion.CannonBallExplosion;
 import net.mehvahdjukaar.supplementaries.configs.CommonConfigs;
@@ -9,16 +9,12 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraft.world.explosion.Explosion;
 import org.joml.Vector3d;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.valkyrienskies.core.api.ships.Ship;
-import org.valkyrienskies.core.api.world.ShipWorld;
 import org.valkyrienskies.mod.common.VSGameUtilsKt;
 
 @Mixin(CannonBallEntity.class)
@@ -42,8 +38,8 @@ public abstract class CannonBallEntityPatch {
             if (ship != null) {
 
                 double radius;
-                if (vs2_sup_fix.DAMAGE_SHIPS_UNIQUELY) {
-                    radius = vs2_sup_fix.CANNONBALL_BREAK_RADIUS;
+                if (vs_sup_fix.DAMAGE_SHIPS_UNIQUELY) {
+                    radius = vs_sup_fix.CANNONBALL_BREAK_RADIUS;
                 } else {
                     radius = CommonConfigs.Functional.CANNONBALL_BREAK_RADIUS.get();
                 }
