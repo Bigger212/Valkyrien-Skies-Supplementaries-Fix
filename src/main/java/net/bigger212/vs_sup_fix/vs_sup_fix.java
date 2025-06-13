@@ -19,7 +19,7 @@ public class vs_sup_fix implements ModInitializer {
 
     private static final File CONFIG_FILE = new File("config/vs2+sup-cannon-fix.properties");
     private static final java.util.Properties CONFIG = new java.util.Properties();
-
+// test comment
     @Override
     public void onInitialize() {
         LOGGER.info("Initializing vs_sup_fix");
