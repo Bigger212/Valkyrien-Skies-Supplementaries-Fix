@@ -11,6 +11,9 @@ These are known issues between the original mods and NOT introduced by this mod.
     /reload crashes the game.
     Cannon aiming mode does not work when assembled with a ship. Just use flint & steel.
 
+Known Issues:
+    
+    Versions 1.20-3.1.29 and below of Supplementaries crashes when config DAMAGE_SHIPS_UNIQUELY is 'true'.
 
 <h1 align="center">View Mod On Modrinth</h1>
 <div align="center">
