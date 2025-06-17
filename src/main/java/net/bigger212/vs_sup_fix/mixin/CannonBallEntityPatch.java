@@ -39,12 +39,18 @@ public abstract class CannonBallEntityPatch {
         if (ship != null) {
 
             double radius;
+
             if (vs_sup_fix.DAMAGE_SHIPS_UNIQUELY) {
                 radius = vs_sup_fix.CANNONBALL_BREAK_RADIUS;
             } else {
-                radius = CommonConfigs.Functional.CANNONBALL_BREAK_RADIUS.get();
+                try { // Simple try/catch if earlier versions of Supplementaries dont have CANNONBALL_BREAK_RADIUS
+                    radius = CommonConfigs.Functional.CANNONBALL_BREAK_RADIUS.get();
+                } catch (NoSuchFieldError | NullPointerException e) {
+                    radius = vs_sup_fix.CANNONBALL_BREAK_RADIUS;
+                }
             }
-            Vec3 movement = self.getDeltaMovement(); // double check...
+
+            Vec3 movement = self.getDeltaMovement();
             double vel = Math.abs(movement.length());
             float scaling = 5.0F;
             float maxAmount = (float)(vel * vel * (double)scaling);
@@ -64,8 +70,8 @@ public abstract class CannonBallEntityPatch {
                     (float) radius,
                     null
             );
-            explosion.explode(); // double check
-            explosion.finalizeExplosion(true); // double check
+            explosion.explode();
+            explosion.finalizeExplosion(true);
         }
     }
 }
